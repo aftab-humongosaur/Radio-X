@@ -1,7 +1,7 @@
 # Radio-X
 Radio-X: AI-powered chest X-ray enhancement system using a Denoising Convolutional Autoencoder built with TensorFlow and Streamlit.
 
-# 🩺 Radio-X — AI-Powered Chest X-Ray Enhancement System
+#  Radio-X — AI-Powered Chest X-Ray Enhancement System
 
 > "Clearing the noise, sharpening the diagnosis."
 
@@ -9,7 +9,7 @@ Radio-X is a deep learning-based medical imaging tool that enhances low-quality 
 
 ---
 
-## 🧠 Problem Statement
+##  Problem Statement
 
 Rural hospitals in India often use outdated X-ray machines that produce noisy, low-quality scans. This leads to:
 - Misdiagnosis due to poor image clarity
@@ -20,7 +20,7 @@ Rural hospitals in India often use outdated X-ray machines that produce noisy, l
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 **Denoising Convolutional Autoencoder**
 ```
@@ -45,7 +45,7 @@ Output (clean X-ray 128x128)
 
 ---
 
-## 📊 Model Performance
+##  Model Performance
 
 | Metric | Score |
 |---|---|
@@ -57,7 +57,7 @@ Output (clean X-ray 128x128)
 
 ---
 
-## 🌐 Web Application
+## Web Application
 
 Built with **Streamlit** — runs entirely in the browser locally.
 
@@ -71,7 +71,7 @@ Built with **Streamlit** — runs entirely in the browser locally.
 
 ---
 
-## 🚀 Run Locally
+##  Run Locally
 ```bash
 # Clone the repo
 git clone https://github.com/aftab-humongosaur/Radio-X.git
@@ -86,14 +86,14 @@ streamlit run app.py
 
 ---
 
-## 📦 Dataset
+##  Dataset
 
 **Chest X-Ray Images (Pneumonia)** — Kaggle  
 [kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Python 3.x
 - TensorFlow / Keras
@@ -102,7 +102,7 @@ streamlit run app.py
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```
 Radio-X/
 ├── app.py                  ← Streamlit web application
@@ -114,7 +114,6 @@ Radio-X/
 
 ---
 
-## 👨‍💻 Author
 
 **Aftab** — MSAIM, PG III Trimester  
 Christ (Deemed to be University), Bangalore  
