@@ -5,6 +5,8 @@ from PIL import Image
 from skimage.metrics import peak_signal_noise_ratio as psnr
 from skimage.metrics import structural_similarity as ssim
 import datetime
+import json
+import plotly.graph_objects as go
 
 st.set_page_config(page_title="Radio-X", page_icon="🩺", layout="wide")
 
@@ -301,3 +303,57 @@ if st.session_state.history:
     st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
     st.markdown('<div class="history-title">📈 Enhancement History — This Session</div>', unsafe_allow_html=True)
     st.dataframe(st.session_state.history, use_container_width=True, hide_index=True)
+
+# Loss curve section
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
+st.markdown('<div class="history-title">📉 Model Training Loss Curve</div>', unsafe_allow_html=True)
+
+try:
+    with open('training_history.json', 'r') as f:
+        hist = json.load(f)
+
+    fig = go.Figure()
+
+    # Training loss line
+    fig.add_trace(go.Scatter(
+        y=hist['loss'],
+        mode='lines',
+        name='Train Loss',
+        line=dict(color='#38bdf8', width=2)
+    ))
+
+    # Validation loss line
+    fig.add_trace(go.Scatter(
+        y=hist['val_loss'],
+        mode='lines',
+        name='Val Loss',
+        line=dict(color='#34d399', width=2)
+    ))
+
+    fig.update_layout(
+        paper_bgcolor='#0d1520',
+        plot_bgcolor='#0d1520',
+        font=dict(color='#94a3b8', family='DM Sans'),
+        xaxis=dict(
+            title='Epoch',
+            gridcolor='#1e2d45',
+            color='#64748b'
+        ),
+        yaxis=dict(
+            title='MSE Loss',
+            gridcolor='#1e2d45',
+            color='#64748b'
+        ),
+        legend=dict(
+            bgcolor='#0d1520',
+            bordercolor='#1e2d45',
+            borderwidth=1
+        ),
+        margin=dict(l=40, r=40, t=20, b=40),
+        height=300
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
+except:
+    st.info("Training history not found.")

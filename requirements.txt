@@ -1,6 +1,7 @@
 streamlit
-tensorflow
+tensorflow==2.15.0
 pillow
 numpy
 scikit-image
 h5py
+plotly
